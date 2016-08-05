@@ -1,0 +1,93 @@
+// == Font of all Knowledge == //
+html {
+  font-family: $font-general;
+  font-weight: $font-weight;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1;
+  -webkit-font-feature-settings: "kern";
+  -moz-font-feature-settings: "kern";
+  -moz-font-feature-settings: "kern=1";
+  font-kerning: normal;
+}
+
+body {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  & > * {font-size: 100%;}
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-heading;
+  font-weight: $font-weight-heading;
+  margin: 0.5em 0 0.1em 0;
+}
+
+p {letter-spacing: 0.02em;}
+
+pre, code, blockquote {
+  font-family: $font-code;
+  color: $colour-general-dark;
+}
+
+figure code pre, figure pre code {
+  font-size: 80% !important;
+	line-height: 1.2 !important;
+};
+
+strong {font-weight: $font-weight-heading;}
+.finally strong {color: $colour-highlight;}
+
+h6, blockquote {font-size: 75%;};
+h5 {font-size: 105%};
+h4 {font-size: 110%};
+h3 {font-size: 115%};
+h2 {font-size: 125%};
+h1 {font-size: 140%};
+h1 a, h2 a, h3 a {&:hover {color: $colour-highlight;}};
+
+#markdown-toc {
+  font-family: $font-heading;
+  font-size: 90%;
+  li {ul {font-size: 90%;}}
+}
+
+@media all and (unquote($one-column)) {
+	#markdown-toc {
+		font-size: 100%;
+		li {ul {font-size: 100%;}}
+	}
+	.finally {
+		font-size: 120%;
+		line-height: $line-height * $line-height;
+	}
+}
+
+.date {
+  font-size: 100%;
+	font-style: italic;
+	text-decoration: uppercase;
+	color: $colour-general;
+}
+
+.title {h1, h2, h3, h4, h5, h6 {
+  font-family: $font-highlight; color: $colour-highlight; font-weight: $font-weight; font-size: 160%;}
+}
+
+// == Responsive Font Sizing == //
+// Weirdly, SASS likes MQ sizes to be multiplied by integers but font sizes by EMs //
+@media all {html {font-size: $font-base + $font-step * 8em; line-height: $line-height;}}
+@media all and (max-width: $font-mq-base + $font-mq-step * 8) {html {font-size: $font-base + $font-step * 8em;}}
+@media all and (max-width: $font-mq-base + $font-mq-step * 7) {html {font-size: $font-base + $font-step * 7em;}}
+@media all and (max-width: $font-mq-base + $font-mq-step * 6) {html {font-size: $font-base + $font-step * 6em;}}
+@media all and (max-width: $font-mq-base + $font-mq-step * 5) {html {font-size: $font-base + $font-step * 5em;}}
+@media all and (max-width: $font-mq-base + $font-mq-step * 4) {html {font-size: $font-base + $font-step * 4em;}}
+@media all and (max-width: $font-mq-base + $font-mq-step * 3) {html {font-size: $font-base + $font-step * 3em;}}
+@media all and (max-width: $font-mq-base + $font-mq-step * 2) {html {font-size: $font-base + $font-step * 2em;}}
+@media all and (max-width: $font-mq-base + $font-mq-step * 1) {html {font-size: $font-base + $font-step * 1em;}}
+@media all and (max-width: $font-mq-base + $font-mq-step) {html {font-size: $font-base;}}
+/*
+@media all and (max-width: $font-mq-base - $font-mq-step * 1) {html {font-size: $font-base - $font-step * 1em;}}
+@media all and (max-width: $font-mq-base - $font-mq-step * 2) {html {font-size: $font-base - $font-step * 2em;}}
+@media all and (max-width: $font-mq-base - $font-mq-step * 3) {html {font-size: $font-base - $font-step * 3em;}}
+@media all and (max-width: $font-mq-base - $font-mq-step * 4) {html {font-size: $font-base - $font-step * 4em;}}
+*/

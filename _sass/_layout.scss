@@ -1,0 +1,87 @@
+// == Two Column Default Layout == //
+body {
+	padding: 0;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	max-width: 46em;
+	position: relative;
+	& > * {
+		margin-left: 11.5rem;
+		margin-right: 2.5rem;
+	}
+}
+
+.content, .date, blockquote, .title, #markdown-toc, figure pre {display: block;}
+.content {padding: 3rem 0 3rem 0;}
+.title {top: 0;}
+
+figure pre {
+	margin: 0;
+	padding: 1rem;
+	white-space: pre;
+}
+
+blockquote, h6, .title, #markdown-toc {
+	float: left;
+	position: absolute;
+	margin-left: 0;
+	margin-bottom: 1rem;
+}
+
+.title {
+	-webkit-transform: translateX(0 - $navigation-width + $gutter-navigation-width * 2);
+	-ms-transform: translateX(0 - $navigation-width + $gutter-navigation-width * 2);
+	transform: translateX(0 - $navigation-width + $gutter-navigation-width * 2);
+}
+
+blockquote, h6, #markdown-toc  {
+	-webkit-transform: translateX(0 - $sub-navigation-width - $gutter-navigation-width);
+	-ms-transform: translateX(0 - $sub-navigation-width - $gutter-navigation-width);
+	transform: translateX(0 - $sub-navigation-width - $gutter-navigation-width);
+	width: $sub-navigation-width;
+	text-align: right;
+	padding: 0;
+	clear: both;
+	ul {padding: 0 0 0.4em 0;}
+	li {padding: 0 0 0.2em 0;}
+}
+
+#markdown-toc {
+	margin: 2rem 0;
+	padding-top: 0.5rem;
+}
+// == Two Column Default Layout == //
+
+
+// == One Column Small Layout == //
+@media all and (unquote($one-column)) {
+	body > * {margin: 0.5rem 1rem;}
+	.content {padding: 0;}
+	 h6, blockquote, .title, #markdown-toc {
+		float: inherit;
+		position: inherit;
+		text-align: left;
+		padding-bottom: 0.5rem;
+	}
+	h6, blockquote, .title, #markdown-toc {
+		-webkit-transform: translateX(0);
+		-ms-transform: translateX(0);
+		transform: translateX(0);
+	}
+	.title {
+		margin-left: 3rem;
+		padding-top: 0.4rem;
+	}
+	#markdown-toc {
+		margin: 1rem 0;
+		width: 100%;
+		li, ul {padding: 0.25rem 0;}
+	}
+	h6, blockquote {
+		padding: 0 0.5rem;
+		width: 90%;
+	}
+	pre code {white-space: pre-wrap;}
+}
+// == One Column Small Layout == //

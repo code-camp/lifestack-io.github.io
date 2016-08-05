@@ -1,0 +1,192 @@
+// -- Regular Elements -- //
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+p {margin-bottom: 1em;}
+
+figure {
+	margin: 0;
+	overflow: auto;
+	word-wrap: none;
+}
+
+ul, ol {list-style-type: none;}
+ol {counter-reset: item;}
+ul li, ol li {
+  position: relative;
+	display: block;
+	margin-left: 1em;
+}
+ul li:before, ol li:before {
+	position: absolute;
+	left: -1em;
+	color: $colour-highlight;
+}
+ol li:before {
+	content: counter(item) ".";
+	counter-increment: item;
+}
+ul li:before {content: "►";}
+
+hr {
+	padding: 0;
+	border: none;
+	color: $colour-emphasis;
+	text-align: center;
+	height: 0.15em;
+	background: $colour-general;
+	background-image: linear-gradient(to right, $colour-general-light, $colour-general, $colour-general-light);
+	&:after {
+		content: "■";
+		display: inline-block;
+		position: relative;
+		top: -0.55rem;
+		font-weight: bold;
+		padding: 0 0.2em;
+		background: $colour-background;
+	}
+}
+
+strong {text-transform: uppercase;}
+// -- Regular Elements -- //
+
+
+// -- Specific Classes -- //
+.logo {width: 8rem;}
+
+.content {
+	p a:hover, ul a:hover {
+		-webkit-transition: background $transition-normal;
+		-moz-transition: background $transition-normal;
+		transition: background $transition-normal;
+		background: $colour-general-light;
+	}
+	#markdown-toc a:hover {
+		color: $colour-highlight; // font-weight: bolder;
+		background: inherit;
+	}	
+	> p {
+		&:first-of-type { 
+			&:first-letter {
+				float: left;
+				font-family: $font-highlight;
+				font-style: normal;
+				background-color: $colour-emphasis;
+				color: $colour-background;
+				margin-right: 0.3rem;
+				margin-top: 0.1rem;
+				font-size: 2.4rem;
+				line-height: 1.6rem;
+				padding: 0.3rem;
+			}
+			&::first-line {
+				font-weight: bold;
+			}
+		}
+	}
+	> table {
+		margin-top: 1rem;
+		margin-bottom: 1.5rem;
+		border-collapse: collapse;
+		width: 95%;
+		tr + tr {border-top: 0.05em solid $colour-general-light;}
+		td + td {border-left: 0.05em solid $colour-general-light;}
+		th {
+			text-transform: uppercase;
+			padding: 0.3rem 0.5rem;
+		}
+		td {
+			padding: 0.4em;
+		}
+	}
+	h5 {
+		color: $colour-general-dark;
+		text-align: center;
+		text-transform: uppercase;
+		padding-bottom: 0.4em;
+		border-bottom: 0.2em double $colour-general-light;
+		margin-left: 25%;
+		margin-right: 25%;
+	}
+}
+
+#markdown-toc {
+	li {list-style-type: none;}
+	li:before {content: "";}
+	border-top: solid 0.1rem $colour-emphasis;
+}
+// -- Specific Classes -- //
+
+
+// -- Icons -- //
+.menu-icon {
+	color: $colour-background;
+  background-color: $colour-general;
+  border-radius: 0.15rem;
+  cursor: pointer;
+	&:before {
+		display: block;
+		content: "";
+		width: 100%;
+		height: 100%;
+		border-top: .375rem double;
+		padding-bottom: .125rem;
+		border-bottom: .125rem solid;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+	&:active {
+		color: $colour-background;
+		background-color: $colour-emphasis;
+	}
+}
+
+.finally svg {float: right;}
+
+.icon {
+	margin-right: 0.5rem;
+	height: 1rem;
+	width: 1rem;
+	path {
+		fill: $colour-general-dark;
+	}
+	&:hover {
+		path {
+			fill: $colour-highlight;
+		}
+	}
+}
+// -- Icons -- //
+
+
+// == One Column Small Layout == //
+@media all and (unquote($one-column)) {
+	h6, blockquote {
+		background: $colour-general-light;
+		border: 1px solid $colour-general;
+		border-left: 3px solid $colour-general;
+	}	
+	.icon {
+		margin-right: 1rem;
+		height: 1.5rem;
+		width: 1.5rem;
+	}
+}
+// == One Column Small Layout == //
+
+
+// == Regular Sized Layout == //
+@media (unquote($breakpoint-regular)) {
+	// This switches ON wrapping once the viewport gets to a reasonable size
+	pre {
+		white-space: pre-wrap !important;
+		word-break: break-all;
+		word-wrap: break-word;
+	}
+	// This switches OFF wrapping when line numbers are displayed (doesn't work)
+	td pre {white-space: pre !important;}
+}
+// == Regular Sized Layout == //

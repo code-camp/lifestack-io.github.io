@@ -1,0 +1,25 @@
+		<!-- Sidebar Visibility Control -->
+		<input type="checkbox" id="nav-display">
+
+		<!-- Sliding Sidebar -->
+		<div class="nav-container" id="nav-container">
+
+			<nav class="nav-menu">
+
+				{% assign pages_list = site.pages | sort:"url" %}
+				{% for node in pages_list %}
+					{% if node.hidden != true %}
+						{% if node.layout == "category" and site.data.categories[node.category].name %}
+							<a class="nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ site.data.categories[node.category].name }}</a>
+						{% else if node.title != null and node.layout != "post" %}
+							<a class="nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }}</a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+
+			</nav>
+
+		</div>
+
+		<!-- Visibility Control Overlay -->
+		<label for="nav-display" class="nav-toggle menu-icon"></label>
