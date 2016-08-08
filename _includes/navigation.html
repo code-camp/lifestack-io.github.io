@@ -9,7 +9,7 @@
 				{% assign pages_list = site.pages | sort:"url" %}
 				{% for node in pages_list %}
 					{% if node.hidden != true %}
-						{% if node.layout == "category" and site.data.categories[node.category].name %}
+						{% if node.category and site.data.categories[node.category].name %}
 							<a class="nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ site.data.categories[node.category].name }}</a>
 						{% else if node.title != null and node.layout != "post" %}
 							<a class="nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }}</a>

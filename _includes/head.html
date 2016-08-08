@@ -11,6 +11,8 @@
 				{{ site.title }} &middot; {{ site.byline }}
 			{% elsif page.title %}
 				{{ site.title }} &middot; {{ page.title }}
+			{% elsif page.category %}
+				{{ site.title }} &middot; {{ site.data.categories[page.category].name }}
 			{% else %}
 				{{ site.title }}
 			{% endif %}
