@@ -193,9 +193,8 @@ strong {text-transform: uppercase;}
 // == One Column Small Layout == //
 @media all and (unquote($one-column)) {
 	h6, blockquote {
-		background: $colour-general-light;
-		border: 1px solid $colour-general;
-		border-left: 3px solid $colour-general;
+		border: 0.1em solid $colour-general-light;
+		border-left: 0.4em solid $colour-general-light;
 	}	
 	.icon {
 		margin-right: 1rem;
