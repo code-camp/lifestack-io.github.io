@@ -4,17 +4,16 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 	width: 100%;
-	max-width: 46em;
+	max-width: $max-width;
 	position: relative;
 	& > * {
-		margin-left: 11.5rem;
-		margin-right: 2.5rem;
+		margin-left: $sub-navigation-width + (2 * $gutter-navigation-width);
+		margin-right: $gutter-navigation-width;
 	}
 }
 
 .content, .date, blockquote, .title, #markdown-toc, figure pre {display: block;}
-.content {padding: 3rem 0 3rem 0;}
-.title {top: 0;}
+.content {padding: 1rem 0 3rem 0;}
 
 figure pre {
 	margin: 0;
@@ -22,17 +21,11 @@ figure pre {
 	white-space: pre;
 }
 
-blockquote, h6, .title, #markdown-toc {
+blockquote, h6, #markdown-toc {
 	float: left;
 	position: absolute;
 	margin-left: 0;
 	margin-bottom: 1rem;
-}
-
-.title {
-	-webkit-transform: translateX(0 - $navigation-width + $gutter-navigation-width + $navigation-toggle-width);
-	-ms-transform: translateX(0 - $navigation-width + $gutter-navigation-width + $navigation-toggle-width); //(0 - $navigation-width + $gutter-navigation-width * 2)
-	transform: translateX(0 - $navigation-width + $gutter-navigation-width + $navigation-toggle-width);
 }
 
 blockquote, h6, #markdown-toc  {
@@ -47,6 +40,8 @@ blockquote, h6, #markdown-toc  {
 	li {padding: 0 0 0.2em 0;}
 }
 
+.title .date {float: right;}
+
 #markdown-toc {
 	margin: 2rem 0;
 	padding-top: 0.5rem;
@@ -58,21 +53,20 @@ blockquote, h6, #markdown-toc  {
 @media all and (unquote($one-column)) {
 	body > * {margin: 0.5rem 1rem;}
 	.content {padding: 0;}
-	 h6, blockquote, .title, #markdown-toc {
+	 h6, blockquote, #markdown-toc {
 		float: inherit;
 		position: inherit;
 		text-align: left;
 		padding-bottom: 0.5rem;
 	}
-	h6, blockquote, .title, #markdown-toc {
+	h6, blockquote, #markdown-toc {
 		-webkit-transform: translateX(0);
 		-ms-transform: translateX(0);
 		transform: translateX(0);
 	}
 	.title {
-		margin-left: $navigation-toggle-width * 1.5;
+		margin-left: $navigation-toggle-width * 2;
 		padding: 0.3rem 0;
-		.date {margin-left: 0 - $navigation-toggle-width * 1.5;}
 	}
 	#markdown-toc {
 		margin: 1rem 0;

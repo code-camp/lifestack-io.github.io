@@ -38,8 +38,9 @@ $one-column:									"max-width: 32.5em";
 $breakpoint-regular:					"min-width: 40em";
 
 /* == Navigation == */
+$max-width:										48em;
 $sub-navigation-width:				7.5rem;
-$gutter-navigation-width:			2rem;
+$gutter-navigation-width:			2.5rem;
 $navigation-width:						$sub-navigation-width + $gutter-navigation-width;
 $navigation-toggle-width:     3rem;
 
