@@ -57,6 +57,7 @@ strong {text-transform: uppercase;}
 .logo {width: 8rem;}
 
 .content {
+	a {-webkit-tap-highlight-color: $colour-highlight-light;}
 	p a:hover, ul a:hover {
 		-webkit-transition: color,background-color $transition-normal;
 		-moz-transition: color,background-color $transition-normal;
