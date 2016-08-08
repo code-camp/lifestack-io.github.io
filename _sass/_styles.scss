@@ -58,13 +58,17 @@ strong {text-transform: uppercase;}
 
 .content {
 	p a:hover, ul a:hover {
-		-webkit-transition: background $transition-normal;
-		-moz-transition: background $transition-normal;
-		transition: background $transition-normal;
-		background: $colour-general-light;
+		-webkit-transition: color,background-color $transition-normal;
+		-moz-transition: color,background-color $transition-normal;
+		transition: color,background-color $transition-normal;
+		background-color: $colour-highlight-light;
+		color: $colour-highlight;
 	}
 	#markdown-toc a:hover {
-		color: $colour-highlight; // font-weight: bolder;
+		-webkit-transition: color $transition-normal;
+		-moz-transition: color $transition-normal;
+		transition: color $transition-normal;
+		color: $colour-highlight;
 		background: inherit;
 	}	
 	> p {
@@ -115,7 +119,21 @@ strong {text-transform: uppercase;}
 #markdown-toc {
 	li {list-style-type: none;}
 	li:before {content: "";}
-	border-top: solid 0.1rem $colour-emphasis;
+	border-top: solid 0.1rem $colour-general;
+}
+
+.highlighter-rouge {
+	> .highlight {
+		& > code {
+			&:before {
+				color: $colour-general-light;
+				font-size: 4rem;
+				float: left;
+				content: "“";
+				line-height: 1rem;
+			}
+		}
+	}
 }
 // -- Specific Classes -- //
 
@@ -131,7 +149,7 @@ strong {text-transform: uppercase;}
 		content: "";
 		width: 100%;
 		height: 100%;
-		border-top: .375rem double;
+		border-top: .4rem double; //0.375
 		padding-bottom: .125rem;
 		border-bottom: .125rem solid;
 		-webkit-box-sizing: border-box;
@@ -144,7 +162,14 @@ strong {text-transform: uppercase;}
 	}
 }
 
-.finally svg {float: right;}
+.finally {
+	svg {float: right;}
+	p {
+		&:first {
+			a {background-color: red;}
+		}
+	}
+}
 
 .icon {
 	margin-right: 0.5rem;
@@ -155,6 +180,9 @@ strong {text-transform: uppercase;}
 	}
 	&:hover {
 		path {
+			-webkit-transition: fill $transition-normal;
+			-moz-transition: fill $transition-normal;
+			transition: fill $transition-normal;
 			fill: $colour-highlight;
 		}
 	}

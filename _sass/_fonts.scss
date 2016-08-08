@@ -24,10 +24,8 @@ h1, h2, h3, h4, h5, h6 {
 
 p {letter-spacing: 0.02em;}
 
-pre, code, blockquote {
-  font-family: $font-code;
-  color: $colour-general-dark;
-}
+pre, code {color: $colour-general-dark;}
+pre, code, blockquote {font-family: $font-code;}
 
 figure code pre, figure pre code {
   font-size: 80% !important;
@@ -37,7 +35,7 @@ figure code pre, figure pre code {
 strong {font-weight: $font-weight-heading;}
 .finally strong {color: $colour-highlight;}
 
-h6, blockquote {font-size: 75%;};
+h6, blockquote {font-size: 75%; color: $colour-general;};
 h5 {font-size: 105%};
 h4 {font-size: 110%};
 h3 {font-size: 115%};
