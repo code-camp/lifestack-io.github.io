@@ -86,7 +86,7 @@ strong {text-transform: uppercase;}
 				line-height: 1.6rem;
 				padding: 0.3rem;
 			}
-			&::first-line {font-weight: bold;}
+			&::first-line {font-weight: bold; font-variant: small-caps;}
 		}
 	}
 	> table {
