@@ -4,8 +4,9 @@
 - Add Copyright Notice to Front Page <-- DONE
 - Sort out ToC + Excerpts (on Index Pages?) <-- DONE
 - IMPROVEMENT: Resize mobile-friendly menu icon <-- DONE
-- BUG: iPhone Landscape TransformX + Nav-Menu issue... <-- SORT OF DONE
+- BUG: iPhone Landscape TransformX + Nav-Menu issue... <-- DONE [Hack]
 - IMPROVEMENT: Google Page Check Score.... <-- NAILED ... https://github.com/filamentgroup/loadCSS
+- IMPROVEMENT: Make static 'Test' Page <-- DONE
 
 - IMPROVEMENT: Finish static 'About' Page
 - IMPROVEMENT: Enable Google Analytics

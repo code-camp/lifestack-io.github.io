@@ -4,8 +4,6 @@ a {
 	color: inherit;
 }
 
-p {margin-bottom: 1em;}
-
 figure {
 	margin: 0;
 	overflow: auto;
@@ -50,6 +48,16 @@ hr {
 }
 
 strong {text-transform: uppercase;}
+
+blockquote {
+	&:before {
+		color: $colour-general-light;
+		font-size: 4rem;
+		float: left;
+		content: "“";
+		line-height: 1rem;
+	}
+}
 // -- Regular Elements -- //
 
 
@@ -58,6 +66,7 @@ strong {text-transform: uppercase;}
 
 .content {
 	a {-webkit-tap-highlight-color: $colour-highlight-light;}
+	> p {margin-bottom: 1em;}
 	p a:hover, ul a:hover {
 		-webkit-transition: color,background-color $transition-normal;
 		-moz-transition: color,background-color $transition-normal;
@@ -74,6 +83,7 @@ strong {text-transform: uppercase;}
 	}	
 	> p {
 		&:first-of-type { 
+			margin-bottom: 1.5rem;
 			&:first-letter {
 				float: left;
 				font-family: $font-highlight;
@@ -82,11 +92,11 @@ strong {text-transform: uppercase;}
 				color: $colour-background;
 				margin-right: 0.3rem;
 				margin-top: 0.1rem;
-				font-size: 2.4rem;
-				line-height: 1.6rem;
-				padding: 0.3rem;
+				font-size: 2.3rem;
+				line-height: 1.5rem;
+				padding: 0.3rem 0.3rem 0.2rem 0.3rem;
 			}
-			&::first-line {font-weight: bold; font-variant: small-caps;}
+			&:first-line {font-weight: bold; font-variant: small-caps; line-height: 90%}
 		}
 	}
 	> table {
@@ -119,20 +129,6 @@ strong {text-transform: uppercase;}
 	border-top: solid 0.1rem $colour-general;
 }
 
-.highlighter-rouge {
-	> .highlight {
-		& > code {
-			&:before {
-				color: $colour-general-light;
-				font-size: 4rem;
-				float: left;
-				content: "“";
-				line-height: 1rem;
-			}
-		}
-	}
-}
-
 .finally {
 	svg {float: right;}
 	p {
@@ -140,6 +136,10 @@ strong {text-transform: uppercase;}
 			a {background-color: red;}
 		}
 	}
+}
+
+.footnotes {
+	p {margin: 0;}
 }
 
 .icon {
@@ -158,12 +158,12 @@ strong {text-transform: uppercase;}
 		}
 	}
 }
-// -- Icons -- //
+// -- Specific Classes -- //
 
 
 // == One Column Small Layout == //
 @media all and (unquote($one-column)) {
-	h6, blockquote {
+	h6, .highlighter-rouge > .highlight > code {
 		border: 0.1em solid $colour-general-light;
 		border-left: 0.4em solid $colour-general-light;
 	}	
