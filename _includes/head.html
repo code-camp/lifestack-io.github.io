@@ -19,10 +19,7 @@
 		</title>
 
 		<!-- CSS -->
-		<style type="text/css">
-			{% capture include_to_scssify %}{% include style.scss %}{% endcapture %}
-			{{ include_to_scssify | scssify }}
-  	</style>
+		<style type="text/css">{% capture include_to_scssify %}{% include style.scss %}{% endcapture %}{{ include_to_scssify | scssify }}</style>
 		
 		<!-- Async CSS -->
 		<link rel="preload" href="/fonts/fonts.css" as="style" onload="this.rel='stylesheet'">
