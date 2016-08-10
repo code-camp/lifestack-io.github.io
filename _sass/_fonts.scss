@@ -23,7 +23,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p {letter-spacing: 0.02rem;}
-sup {font-size: 70%; padding-left: 0.2rem;}
+sup, sub {
+	font-size: 70%;
+	padding-left: 0.2em;
+  vertical-align: baseline;
+  position: relative;
+  top: -0.5em;
+}
+sub {top: 0.5em;}
 
 pre, code {color: $colour-general-dark;}
 pre, code, blockquote {font-family: $font-code;}

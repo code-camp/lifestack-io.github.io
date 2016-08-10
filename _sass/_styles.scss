@@ -90,13 +90,12 @@ blockquote {
 				font-style: normal;
 				background-color: $colour-emphasis;
 				color: $colour-background;
-				margin-right: 0.3rem;
-				margin-top: 0.1rem;
-				font-size: 2.3rem;
-				line-height: 1.5rem;
+				margin: 0.1rem 0.3rem 0 0;
+				font-size: 2.2rem;
+				line-height: 1.4rem;
 				padding: 0.3rem 0.3rem 0.2rem 0.3rem;
 			}
-			&:first-line {font-weight: bold; font-variant: small-caps; line-height: 90%; font-size: 110%;}
+			&:first-line {font-weight: bold; font-variant: small-caps; font-size: 110%; line-height: 80%;}
 		}
 	}
 	> table {
