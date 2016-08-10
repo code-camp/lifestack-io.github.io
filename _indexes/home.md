@@ -25,4 +25,4 @@ permalink: /
 {% endunless %}
 {% endfor %}
 
-> &copy; {{ site.time | date: '%Y' }} [{{site.author.name}}]({{site.baseurl}}about/#copyright--licensing)
+    &copy; {{ site.time | date: '%Y' }} [{{site.author.name}}]({{site.baseurl}}about/#copyright--licensing)
