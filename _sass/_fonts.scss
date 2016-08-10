@@ -1,15 +1,12 @@
 // == Font of all Knowledge == //
-html {
-  font-family: $font-general;
+body {
+	font-family: $font-general;
   font-weight: $font-weight;
   text-rendering: auto; // optimizeLegibility
   font-feature-settings: "kern" 1;
   -webkit-font-feature-settings: "kern";
   -moz-font-feature-settings: "kern=1";
   font-kerning: normal;
-}
-
-body {
   font-size: 100%;
   -webkit-text-size-adjust: 100%;
   & > * {font-size: 100%;}
